@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Биржа проектов - Педагог года</title>
     <link rel="stylesheet" href="style0.css">
+    <link rel="stylesheet" href="styles1.css">
 
 <body>
     <h1> <a href="#" id="actionButton" class="custom-link">БИРЖА </a></h1>
@@ -76,11 +77,61 @@
         <button class="custom-button">Подать заявку</button>
     </div>
 
+
+
+
+
+    <div class="project-card">
+        <div class="project-title">#1 Создание сайта для проведения конкурса "Педагог года"</div>
+
+        <div class="project-description">
+            Развернутое описание задач с требованиями, внимание анекдот:
+        </div>
+
+        <div class="joke">
+            - Как вам удалось так быстро выучить английский язык?<br>
+            - Да, ерунда какая. Они там почти все слова из C++ взяли.
+        </div>
+
+        <div class="tech-stack">
+            <span class="tech-tag">C#</span>
+            <span class="tech-tag">Blazor</span>
+            <span class="tech-tag">.NET 6.0</span>
+            <span class="tech-tag">SQLite</span>
+        </div>
+
+        <div class="help-question">Чем ваша команда может помочь инициатору?...</div>
+        <ul>
+            <li>Екатерина Сердякова</li>
+        </ul>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary">ОТПРАВИТЬ</button>
+
+        </div>
+    </div>
+    <div class="project-card-close">
+
+    </div>
+
 </body>
 <script>
-document.querySelectorAll(".section .custom-button").forEach(element => {
-    element.on    
-});
-    
+
+    //открыть всплывающее окно заявки
+    console.log(document.querySelectorAll(".section .custom-button"));
+    document.querySelectorAll(".section .custom-button").forEach((e) => {
+        console.log(e);
+        e.addEventListener("click", function (event) {
+            document.querySelector(".project-card").classList.add("enable");
+            document.querySelector(".project-card-close").classList.add("enable");
+        });
+    });
+
+    //закрыть всплывающее окно заявки
+    document.querySelector(".project-card-close").addEventListener("click", function (event) {
+        document.querySelector(".project-card").classList.remove("enable");
+        document.querySelector(".project-card-close").classList.remove("enable");
+    });
 </script>
+
 </html>
