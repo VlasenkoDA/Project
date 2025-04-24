@@ -1,0 +1,82 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #3498db;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* Header Styles */
+h1:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 28px;
+    transition: color 0.3s;
+}
+
+.custom-link:hover {
+    color: #e74c3c;
+}
+
+/* Competencies Section */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Button Styles */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.custom-button {
+    background-color: #2ecc71;
+    padding: 12px 25px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.custom-button:hover {
+    background-color: #27ae60;
+}
+
+/* Section Styles */
+.section {
+    background-color: white;
+    padding
