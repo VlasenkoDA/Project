@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <link rel="stylesheet" href="registration.css">
+    <link rel="stylesheet" href="./css/registration.css">
 </head>
 
 <body>
     <div class="registration-container">
         <h1>РЕГИСТРАЦИЯ</h1>
 
-        <form class="registration-form">
+        <form class="registration-form" method="POST" action="./settings/">
             <div class="form-group">
                 <label for="username">Имя пользователя*:</label>
                 <input type="text" id="username" required>
@@ -40,7 +40,7 @@
 
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">ЗАРЕГЕСТРИРОВАТЬСЯ</button>
-                <button type="button" class="btn btn-link">ВОССТАНОВИТЬ ПАРОЛЬ</button>
+                <a href="./recover_password/" type="button" class="btn btn-link">ВОССТАНОВИТЬ ПАРОЛЬ</button>
             </div>
         </form>
     </div>

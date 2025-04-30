@@ -82,33 +82,50 @@
 
 
     <div class="project-card">
-        <div class="project-title">#1 Создание сайта для проведения конкурса "Педагог года"</div>
+        <form method="POST" action="./prodject_send/">
+            <div class="project-title">
+                <input type="text" name="project-title" id="project-title"
+                    value='#1 Создание сайта для проведения конкурса "Педагог года"' readonly />
+            </div>
 
-        <div class="project-description">
-            Развернутое описание задач с требованиями, внимание анекдот:
-        </div>
+            <div class="project-description">
+                <textarea name="project-description" id="project-description" readonly>
+                    Развернутое описание задач с требованиями, внимание анекдот:
+                </textarea>
+            </div>
 
-        <div class="joke">
-            - Как вам удалось так быстро выучить английский язык?<br>
-            - Да, ерунда какая. Они там почти все слова из C++ взяли.
-        </div>
+            <div class="joke">
+                <textarea name="joke" id="joke" readonly>
+                    - Как вам удалось так быстро выучить английский язык?<br>
+                    - Да, ерунда какая. Они там почти все слова из C++ взяли.
+                </textarea>
+            </div>
 
-        <div class="tech-stack">
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">Blazor</span>
-            <span class="tech-tag">.NET 6.0</span>
-            <span class="tech-tag">SQLite</span>
-        </div>
+            <div class="tech-stack">
+                <textarea name="joke" id="joke" readonly>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Blazor</span>
+                    <span class="tech-tag">.NET 6.0</span>
+                    <span class="tech-tag">SQLite</span>
+                </textarea>
+            </div>
 
-        <div class="help-question">Чем ваша команда может помочь инициатору?...</div>
-        <ul>
-            <li>Екатерина Сердякова</li>
-        </ul>
+            <div class="help-question">
+                <textarea name="help-question" id="help-question" readonly>
+                    Чем ваша команда может помочь инициатору?...
+                </textarea>
+            </div>
+            <ul>
+                <li>
+                    <input type="text" name="author-name" id="author-name"
+                    value='Екатерина Сердякова' readonly />
+                </li>
+            </ul>
 
-        <div class="action-buttons">
-            <button class="btn btn-primary">ОТПРАВИТЬ</button>
-
-        </div>
+            <div class="action-buttons">
+                <button class="btn btn-primary" type="submit">ОТПРАВИТЬ</button>
+            </div>
+        </form>
     </div>
     <div class="project-card-close">
 

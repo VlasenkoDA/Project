@@ -13,26 +13,26 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     position: fixed;
-    left: calc(50% - 629px);
+    left: calc(50% - 659px);
     top: calc(50% - 329px);
     z-index: 100;
     display: none;
     width: 1258px;
 }
 
-.project-title {
+.project-card .project-title {
     color: #2c3e50;
     font-size: 24px;
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-.project-description {
+.project-card .project-description {
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.joke {
+.project-card .joke {
     background-color: #f8f9fa;
     padding: 15px;
     border-left: 4px solid #3498db;
@@ -55,13 +55,13 @@
     color: #00796b;
 }
 
-.help-question {
+.project-card .help-question {
     font-weight: bold;
     margin: 25px 0 15px 0;
     color: #2c3e50;
 }
 
-.action-buttons {
+.project-card .action-buttons {
     display: flex;
     gap: 15px;
     margin-top: 20px;

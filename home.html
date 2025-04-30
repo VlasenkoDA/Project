@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биржа проектов - Педагог года</title>
+    <link rel="stylesheet" href="./css/style0.css">
+    <link rel="stylesheet" href="./css/styles1.css">
+
+<body>
+    <h1> <a href="#" id="actionButton" class="custom-link">БИРЖА </a></h1>
+    <h1> ПРОЕКТ КОМАНДЫ </h1>
+
+    <div id="actionSequence" class="action-sequence"></div>
+
+    <h2>Компетенции</h2>
+    <ul>
+        <li><strong>....</strong></li>
+        <li>React</li>
+        <li>PHP</li>
+        <li>Unreal Engine GameMode</li>
+        <li>Blueprint</li>
+        <li>SpringBoot</li>
+        <li>SQLite</li>
+    </ul>
+    </div>
+
+    <div class="section">
+        <h2><button>ПОКАЗАТЬ 10</button> <button>СБРОСИТЬ</button></h2>
+
+    </div>
+
+    <div class="section">
+        <h2><button>Вход</button> <button>Регистрация</button></h2>
+
+    </div>
+
+    <div class="section">
+
+        <h2 class="project-title">Создание сайта для проведения конкурса "Педагог года"</h2>
+        <p class="project-description"><strong>Разработка веб-приложения для Разработка веб-приложения для создания
+                анкет преподавателей и
+                проведения голосования за них</strong></p>
+        <div class="joke" style="display:none;">
+            - Как вам удалось так быстро выучить английский язык?<br>
+            - Да, ерунда какая. Они там почти все слова из C++ взяли.
+        </div>
+        <ul class="tech-stack">
+            <li class="tech-tag">C#</li>
+            <li class="tech-tag">Blazor</li>
+            <li class="tech-tag">.NET 6.0</li>
+            <li class="tech-tag">SQLite</li>
+        </ul>
+        <ul>
+            <li>Команд до 7 человек</li>
+            <li>Подпись 2 заявки</li>
+        </ul>
+        <p>Ответственные:</p>
+        <ul class="responsible">
+            <li>Екатерина Сердякова</li>
+            <li>Педагог, кандидат</li>
+        </ul>
+        <button class="custom-button">Подать заявку</button>
+    </div>
+
+    <!-- Повторяющиеся секции (оставлены как в оригинале) -->
+    <div class="section">
+
+        <h2 class="project-title">Создание сайта для проведения конкурса "Педагог года"</h2>
+        <p class="project-description"><strong>Разработка веб-приложения для Разработка веб-приложения для создания
+                анкет преподавателей и
+                проведения голосования за них</strong></p>
+        <div class="joke" style="display:none;">
+            - Как вам удалось так быстро выучить английский язык?<br>
+            - Да, ерунда какая. Они там почти все слова из C++ взяли.
+        </div>
+        <ul class="tech-stack">
+            <li class="tech-tag">C#</li>
+            <li class="tech-tag">Blazor</li>
+            <li class="tech-tag">.NET 6.0</li>
+            <li class="tech-tag">SQLite</li>
+        </ul>
+        <ul>
+            <li>Команд до 7 человек</li>
+            <li>Подпись 2 заявки</li>
+        </ul>
+        <p>Ответственные:</p>
+        <ul class="responsible">
+            <li>Екатерина Сердякова</li>
+            <li>Педагог, кандидат</li>
+        </ul>
+        <button class="custom-button">Подать заявку</button>
+    </div>
+
+
+    <!-- Всплывающее окно для отправки -->
+    <div class="project-card">
+        <div class="project-title"></div>
+
+        <div class="project-description"></div>
+
+        <div class="joke"></div>
+
+        <div class="tech-stack"></div>
+
+        <div class="help-question"></div>
+        <ul class="responsible"></ul>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary">ОТПРАВИТЬ</button>
+        </div>
+    </div>
+    <div class="project-card-close">
+
+    </div>
+
+</body>
+<script>
+    //обьект данных по проекту
+    let projectCardData = new Object();
+
+    //открыть всплывающее окно
+    console.log(document.querySelectorAll(".section .custom-button"));
+    document.querySelectorAll(".section .custom-button").forEach((e) => {
+        // console.log(e);
+        e.addEventListener("click", function (event) {
+            // console.log(event);
+            // console.log(event.target.parentElement);
+
+            //получить данные из полей где нажата кнопка
+            let section = event.target.parentElement;
+            projectCardData.projectTitle = section.querySelector(".project-title").innerText;
+            projectCardData.projectDescription = section.querySelector(".project-description").innerText;
+            projectCardData.joke = section.querySelector(".joke").innerHTML;
+            projectCardData.techStackHTML = section.querySelector(".tech-stack").innerHTML;
+            projectCardData.techStack = [];
+            section.querySelector(".tech-stack").querySelectorAll(".tech-tag").forEach((elem, i) => {
+                projectCardData.techStack.push(elem.innerText);
+            });
+            projectCardData.responsibleHTML = section.querySelector(".responsible").innerHTML;
+            projectCardData.responsible = [];
+            section.querySelector(".responsible").querySelectorAll("li").forEach((elem, i) => {
+                projectCardData.responsible.push(elem.innerText);
+            });
+
+            //записать данные в поля сплывающего окна
+            let projectCard = document.querySelector(".project-card")
+            projectCard.querySelector(".project-title").innerHTML = projectCardData.projectTitle;
+            projectCard.querySelector(".project-description").innerHTML = projectCardData.projectDescription;
+            projectCard.querySelector(".joke").innerHTML = projectCardData.joke;
+            projectCard.querySelector(".tech-stack").innerHTML = projectCardData.techStackHTML;
+            projectCard.querySelector(".responsible").innerHTML = projectCardData.responsibleHTML;
+
+            projectCard.classList.add("enable");
+            document.querySelector(".project-card-close").classList.add("enable");
+        });
+    });
+
+    //отправка данных проекта при нажатии на кнопку отправить в сплывающем окне
+    document.querySelector(".action-buttons button").addEventListener("click", function (event) {
+        function toFormData(o) {
+            delete projectCardData.techStackHTML;
+            delete projectCardData.responsibleHTML;
+            return Object
+                .entries(o)
+                .reduce((d, e) => (d.append(...e), d), new FormData());
+        }
+
+        fetch('./send-project/', {
+            method: 'POST',
+            body: toFormData(projectCardData)
+        }).then(r => r.json())
+            .then(console.log)
+            .then(projectCardData = new Object())
+            .then(location.reload(true));
+    });
+
+    //закрыть всплывающее окно заявки
+    document.querySelector(".project-card-close").addEventListener("click", function (event) {
+        document.querySelector(".project-card").classList.remove("enable");
+        document.querySelector(".project-card-close").classList.remove("enable");
+
+        projectCardData = new Object();
+    });
+</script>
+
+</html>
